@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.customcamera.gallery.R;
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        TextView tvDisplayFileNames = findViewById(R.id.tvDisplayFileNames);
+
         for (MediaData mediaData : MediaFileUtils.getMediaList()) {
             if (mediaData != null) {
                 if (mediaData.getFileType() == MEDIA_VIDEO) {
@@ -78,12 +81,16 @@ public class MainActivity extends AppCompatActivity {
                         filePath = mediaData.getFilePath();
                     File source = new File(filePath);
 
+                    tvDisplayFileNames.setText(tvDisplayFileNames.getText()+"\n"+source.getAbsolutePath() +"\n");
+
+
                 } else {
                     String filePath = mediaData.getOutPutFilePath();
                     if (!mediaData.isTrimmed())
                         filePath = mediaData.getFilePath();
                     File source = new File(filePath);
 
+                    tvDisplayFileNames.setText(tvDisplayFileNames.getText()+"\n"+source.getAbsolutePath());
                 }
             }
         }

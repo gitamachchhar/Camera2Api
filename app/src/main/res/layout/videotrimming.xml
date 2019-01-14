@@ -74,14 +74,14 @@
             android:paddingEnd="@dimen/dimen_10dp"
             android:visibility="gone">
 
-            <com.gcbib.ui.widget.CustomTextViewRegular
+            <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:textColor="@android:color/white" />
 
-            <com.gcbib.ui.widget.CustomTextViewRegular
+            <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textTimeSelection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 android:gravity="center"
                 android:textColor="@android:color/white" />
 
-            <com.gcbib.ui.widget.CustomTextViewRegular
+            <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
